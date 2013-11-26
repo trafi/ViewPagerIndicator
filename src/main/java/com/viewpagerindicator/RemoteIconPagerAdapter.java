@@ -7,7 +7,7 @@ import android.widget.ImageView;
  */
 public interface RemoteIconPagerAdapter {
 
-    public void loadImageOnView(ImageView imageView);
+    public void loadImageOnView(int position,ImageView imageView);
 
     // From PagerAdapter
     public int getCount();

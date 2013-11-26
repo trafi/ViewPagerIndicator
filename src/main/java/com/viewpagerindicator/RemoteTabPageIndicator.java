@@ -18,7 +18,7 @@ public class RemoteTabPageIndicator extends TabPageIndicator {
 
     protected final OnClickListener mTabClickListener = new OnClickListener() {
         public void onClick(View view) {
-            RemoteTabView tabView = (RemoteTabView)view;
+            RemoteTabView tabView = (RemoteTabView) view;
             final int oldSelected = mViewPager.getCurrentItem();
             final int newSelected = tabView.getIndex();
             mViewPager.setCurrentItem(newSelected);
@@ -71,7 +71,9 @@ public class RemoteTabPageIndicator extends TabPageIndicator {
         tabView.mIndex = index;
         tabView.setFocusable(true);
         tabView.setOnClickListener(mTabClickListener);
-        iconAdapter.loadImageOnView(tabView);
+        if (iconAdapter != null) {
+            iconAdapter.loadImageOnView(index, tabView);
+        }
         mTabLayout.addView(tabView, new LinearLayout.LayoutParams(mIconWidth, MATCH_PARENT, 1));
     }
 
