@@ -36,7 +36,7 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
  */
 public class TabPageIndicator extends HorizontalScrollView implements PageIndicator {
     /** Title text used when no title is provided by the adapter. */
-    private static final CharSequence EMPTY_TITLE = "";
+    protected static final CharSequence EMPTY_TITLE = "";
 
     /**
      * Interface for a callback when the selected tab has been reselected.
@@ -52,7 +52,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
 
     private Runnable mTabSelector;
 
-    private final OnClickListener mTabClickListener = new OnClickListener() {
+    protected final OnClickListener mTabClickListener = new OnClickListener() {
         public void onClick(View view) {
             TabView tabView = (TabView)view;
             final int oldSelected = mViewPager.getCurrentItem();
@@ -64,15 +64,15 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         }
     };
 
-    private final IcsLinearLayout mTabLayout;
+    protected final IcsLinearLayout mTabLayout;
 
-    private ViewPager mViewPager;
+    protected ViewPager mViewPager;
     private OnPageChangeListener mListener;
 
-    private int mMaxTabWidth;
-    private int mSelectedTabIndex;
+    protected int mMaxTabWidth;
+    protected int mSelectedTabIndex;
 
-    private OnTabReselectedListener mTabReselectedListener;
+    protected OnTabReselectedListener mTabReselectedListener;
 
     public TabPageIndicator(Context context) {
         this(context, null);
@@ -149,7 +149,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         }
     }
 
-    private void addTab(int index, CharSequence text, int iconResId) {
+    protected void addTab(int index, CharSequence text, int iconResId) {
         final TabView tabView = new TabView(getContext());
         tabView.mIndex = index;
         tabView.setFocusable(true);
@@ -258,8 +258,8 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         mListener = listener;
     }
 
-    private class TabView extends TextView {
-        private int mIndex;
+    protected class TabView extends TextView {
+        protected int mIndex;
 
         public TabView(Context context) {
             super(context, null, R.attr.vpiTabPageIndicatorStyle);
