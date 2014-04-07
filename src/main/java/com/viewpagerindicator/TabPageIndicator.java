@@ -17,6 +17,7 @@
 package com.viewpagerindicator;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -263,6 +264,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
 
         public TabView(Context context) {
             super(context, null, R.attr.vpiTabPageIndicatorStyle);
+            setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/Roboto-Regular.ttf"));
         }
 
         @Override
