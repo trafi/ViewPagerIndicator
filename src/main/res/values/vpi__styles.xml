@@ -19,6 +19,7 @@
         <item name="vpiIconPageIndicatorStyle">@style/Widget.IconPageIndicator</item>
         <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>
         <item name="vpiTabPageIndicatorGreyStyle">@style/Widget.TabPageIndicator</item>
+        <item name="vpiTabPageIndicatorBadgeStyle">@style/Widget.TabPageIndicator</item>
     </style>
 
     <style name="Widget">
