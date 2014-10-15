@@ -18,12 +18,14 @@ public class RemoteTabPageIndicator extends TabPageIndicator {
 
     protected final OnClickListener mTabClickListener = new OnClickListener() {
         public void onClick(View view) {
-            RemoteTabView tabView = (RemoteTabView) view;
-            final int oldSelected = mViewPager.getCurrentItem();
-            final int newSelected = tabView.getIndex();
-            mViewPager.setCurrentItem(newSelected);
-            if (oldSelected == newSelected && mTabReselectedListener != null) {
-                mTabReselectedListener.onTabReselected(newSelected);
+            if (mViewPager != null) {
+                RemoteTabView tabView = (RemoteTabView) view;
+                final int oldSelected = mViewPager.getCurrentItem();
+                final int newSelected = tabView.getIndex();
+                mViewPager.setCurrentItem(newSelected);
+                if (oldSelected == newSelected && mTabReselectedListener != null) {
+                    mTabReselectedListener.onTabReselected(newSelected);
+                }
             }
         }
     };
