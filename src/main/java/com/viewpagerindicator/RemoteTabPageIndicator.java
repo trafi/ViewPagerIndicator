@@ -83,7 +83,7 @@ public class RemoteTabPageIndicator extends TabPageIndicator {
         protected int mIndex;
 
         public RemoteTabView(Context context) {
-            super(context, null, R.attr.vpiTabPageIndicatorStyle);
+            super(context, null, getStyle());
         }
 
         @Override

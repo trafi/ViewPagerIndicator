@@ -37,11 +37,6 @@ public class TabWithBadgePageIndicator extends TabPageIndicator {
     }
 
     @Override
-    public int getStyle() {
-        return R.attr.vpiTabPageIndicatorBadgeStyle;
-    }
-
-    @Override
     public void notifyDataSetChanged() {
         mTabLayout.removeAllViews();
         PagerAdapter adapter = mViewPager.getAdapter();

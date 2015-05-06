@@ -40,6 +40,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
      * Title text used when no title is provided by the adapter.
      */
     protected static final CharSequence EMPTY_TITLE = "";
+    private static int mStyle;
 
     /**
      * Interface for a callback when the selected tab has been reselected.
@@ -90,7 +91,11 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
     }
 
     protected int getStyle() {
-        return R.attr.vpiTabPageIndicatorStyle;
+        return mStyle;
+    }
+
+    public void setStyle(int style) {
+        mStyle = style;
     }
 
     public void setOnTabReselectedListener(OnTabReselectedListener listener) {
